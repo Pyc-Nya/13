@@ -29,10 +29,11 @@ body {
 
     &__refresh {
         position: relative;
+        width: 300px;
         & span {
             position: absolute;
             top: 0;
-            left: -90px;
+            left: calc(50% - 90px);
             cursor: pointer;
             transition: all 50ms ease;
             font-size: 25px;
@@ -186,6 +187,7 @@ body {
     
     .text {
        margin-bottom: 80px; 
+
     }
 }
 
@@ -198,9 +200,9 @@ body {
     
         &__refresh {
             position: relative;
-            width: 100%;
+            width: 200px;
             & span {
-                left: -16%;
+                left: calc(50% - 78px);
                 font-size: 20px;
             }
         }
