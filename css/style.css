@@ -295,9 +295,10 @@ body {
   }
   .text__refresh {
     position: relative;
+    width: 100%;
   }
   .text__refresh span {
-    left: -75px;
+    left: -18%;
     font-size: 20px;
   }
   .tic-tac-toe__item {

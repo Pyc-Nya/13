@@ -198,8 +198,9 @@ body {
     
         &__refresh {
             position: relative;
+            width: 100%;
             & span {
-                left: -75px;
+                left: -18%;
                 font-size: 20px;
             }
         }
