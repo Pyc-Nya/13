@@ -18,6 +18,7 @@ table.addEventListener("click", handler);
 refreshButton.addEventListener("click", refresh);
 endGameRefreshButton.addEventListener("click", newGame);
 let computerMove = true;
+let isRefreshed;
 
 function handler(e) {
     if (e.target.tagName != 'TD') return;
@@ -35,14 +36,17 @@ function handler(e) {
         if (game()) return;
 
         moveInfo.innerHTML = 'Ход Компьютера';
+        isRefreshed = false;
 
         setTimeout(() => {
-            makeMoveComputer(map);
-            moveInfo.innerHTML = 'Ваш ход';
-            computerMove = true;
-            setTimeout(() => {
-                if (game()) return;
-            }, 50);
+            if (!isRefreshed) {
+                makeMoveComputer(map);
+                moveInfo.innerHTML = 'Ваш ход';
+                computerMove = true;
+                setTimeout(() => {
+                    if (game()) return;
+                }, 50);
+            }
         }, 500);
     }
 }
@@ -50,6 +54,7 @@ function handler(e) {
 
 function refresh() {
     let spans = document.querySelectorAll('td span');
+    isRefreshed = true;
     for (let span of spans) {
         span.style.display = "none";
     }
